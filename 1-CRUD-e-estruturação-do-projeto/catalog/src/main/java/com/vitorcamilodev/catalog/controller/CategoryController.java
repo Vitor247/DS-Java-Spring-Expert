@@ -1,5 +1,6 @@
 package com.vitorcamilodev.catalog.controller;
 
+import com.vitorcamilodev.catalog.dto.CategoryDTO;
 import com.vitorcamilodev.catalog.entities.Category;
 import com.vitorcamilodev.catalog.services.CategoryService;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,8 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> findAll() {
-        List<Category> list = service.findAll();
+    public ResponseEntity<List<CategoryDTO>> findAll() {
+        List<CategoryDTO> list = service.findAll();
         return ResponseEntity.ok(list);
     }
 }
