@@ -2,12 +2,13 @@ package com.vitorcamilodev.catalog.controller;
 
 import com.vitorcamilodev.catalog.dto.CategoryDTO;
 import com.vitorcamilodev.catalog.services.CategoryService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/categories")
@@ -20,9 +21,9 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CategoryDTO>> findAll() {
-        List<CategoryDTO> dto = service.findAll();
-        return ResponseEntity.ok(dto);
+    public ResponseEntity<Page<CategoryDTO>> findAll(Pageable pageable) {
+        Page<CategoryDTO> list = service.findAllPaged(pageable);
+        return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
