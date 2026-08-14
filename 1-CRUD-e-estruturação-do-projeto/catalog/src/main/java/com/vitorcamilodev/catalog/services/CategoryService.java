@@ -1,10 +1,5 @@
 package com.vitorcamilodev.catalog.services;
 
-import com.vitorcamilodev.catalog.dto.CategoryDTO;
-import com.vitorcamilodev.catalog.entities.Category;
-import com.vitorcamilodev.catalog.repositories.CategoryRepository;
-import com.vitorcamilodev.catalog.services.exceptions.DatabaseException;
-import com.vitorcamilodev.catalog.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -12,6 +7,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.vitorcamilodev.catalog.dto.CategoryDTO;
+import com.vitorcamilodev.catalog.entities.Category;
+import com.vitorcamilodev.catalog.repositories.CategoryRepository;
+import com.vitorcamilodev.catalog.services.exceptions.DatabaseException;
+import com.vitorcamilodev.catalog.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CategoryService {

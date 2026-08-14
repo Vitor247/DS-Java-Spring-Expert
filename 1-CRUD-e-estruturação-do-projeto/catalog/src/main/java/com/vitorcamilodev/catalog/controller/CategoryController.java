@@ -1,14 +1,15 @@
 package com.vitorcamilodev.catalog.controller;
 
-import com.vitorcamilodev.catalog.dto.CategoryDTO;
-import com.vitorcamilodev.catalog.services.CategoryService;
+import java.net.URI;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
+import com.vitorcamilodev.catalog.dto.CategoryDTO;
+import com.vitorcamilodev.catalog.services.CategoryService;
 
 @RestController
 @RequestMapping(value = "/categories")
